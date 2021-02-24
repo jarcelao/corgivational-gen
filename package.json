@@ -1,0 +1,31 @@
+{
+  "name": "corgivational-gen",
+  "description": "generates nice motivational quotes from corgear c:",
+  "author": "Jericho Arcelao & Szel Embay",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel $npm_package_parcel_entrypoints",
+    "build": "parcel build $npm_package_parcel_entrypoints"
+  },
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-react": "^7.12.13",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "1.19.1"
+  },
+  "parcel": {
+    "entrypoints": "src/index.html"
+  }
+}
