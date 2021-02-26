@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function App() {
-  return <h1>Blank</h1>;
-}
+import App from "./App";
+import "./styles.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
