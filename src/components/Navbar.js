@@ -3,8 +3,8 @@ import React from "react";
 class Navbar extends React.Component {
   render() {
     return (
-      <header className="p-10 bg-red-300">
-        <p className="text-sans text-5xl text-white font-bold">
+      <header className="lg:p-8 p-5 bg-red-300">
+        <p className="text-sans lg:text-5xl text-lg text-white font-bold">
           CORGIVATIONAL GENERATOR
         </p>
       </header>
