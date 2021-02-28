@@ -6,7 +6,10 @@ class GenImage extends React.Component {
       <img
         src="SpaceGear_Template.webp"
         alt=""
-        className="sm:w-2/3 w-4/5 mx-auto pt-5"
+        className="mx-auto pt-6"
+        style={{
+          width: "85%"
+        }}
       ></img>
     );
   }

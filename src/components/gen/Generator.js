@@ -8,12 +8,12 @@ import GenButtonLarge from "./GenButtonLarge";
 class Generator extends React.Component {
   render() {
     return (
-      <div className="flex flex-wrap place-content-evenly bg-white h-full lg:mx-64 xl:mx-96">
-        <GenImage />
-        <GenInput placeholderText="Enter text..." />
-        <GenButtonSmall buttonText="IMG" />
-        <GenButtonLarge buttonText="RANDOMLY GENERATE" />
-      </div>
+        <div className="flex flex-wrap place-content-center gap-1 bg-white h-full lg:mx-64 xl:mx-96">
+          <GenImage />
+          <GenInput placeholderText="Enter text..." />
+          <GenButtonSmall buttonText="IMG" />
+          <GenButtonLarge buttonText="RANDOMLY GENERATE" />
+        </div>
     );
   }
 }

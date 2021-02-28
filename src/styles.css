@@ -3,3 +3,13 @@
 @tailwind components;
 
 @tailwind utilities;
+ 
+
+/*Custom colors*/
+.skyblue {
+    background-color: rgb(197, 227, 235);
+}
+
+.blue {
+    background-color: rgb(103, 155, 197);
+}
