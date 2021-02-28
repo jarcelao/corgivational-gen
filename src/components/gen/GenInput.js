@@ -1,19 +1,20 @@
 import React from "react";
 
-import GenText from "./GenText";
+import GenText from "./GenText"
 
 class GenInput extends React.Component {
 
   constructor() {
     super()
     this.state = {
-      text: "",
+      quote: "",
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(event) {
-    this.setState({ text: event.target })
+    const {name, value} = event.target
+    this.setState({ [name]: value })
   }
   
   render() {
@@ -27,7 +28,7 @@ class GenInput extends React.Component {
           value={this.state.quote}
           onChange={this.handleChange}
         />
-        <GenText text={this.state.text} />
+      <GenText text={this.state.quote} />
       </div>
     );
   }

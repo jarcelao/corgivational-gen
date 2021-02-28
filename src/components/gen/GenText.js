@@ -1,18 +1,10 @@
 import React from "react";
 
 class GenText extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            text: "HELLO"
-        }
-
-        updateText = updateText.bind(this)
-    }
 
     render() {
         return (
-            <p>{this.props.text}</p> 
+            <h2 className="absolute top-5 pt-4 w-1/4 text-sans text-3xl text-white stroke-black font-bold">{this.props.text}</h2> 
         )
     }
 }
