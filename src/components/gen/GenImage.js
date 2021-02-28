@@ -4,7 +4,7 @@ class GenImage extends React.Component {
   render() {
     return (
       <img
-        src="SpaceGear_Template.webp"
+        src={this.props.imageSource}
         alt=""
         className="mx-auto pt-6"
         style={{
