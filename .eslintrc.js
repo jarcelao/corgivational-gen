@@ -4,6 +4,7 @@ module.exports = {
     es6: true,
     node: true
   },
+  parser: "@babel/eslint-parser",
   extends: [
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",

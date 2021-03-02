@@ -1,26 +1,25 @@
 import React from "react";
 
-import GenText from "./GenText"
+import GenText from "./GenText";
 
 class GenInput extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       quote: ""
-    }
-    this.handleChange = this.handleChange.bind(this)
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    const {name, value} = event.target
-    this.setState({ [name]: value })
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ quote: nextProps.text})
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    this.setState({ quote: nextProps.text });
   }
-  
+
   render() {
     return (
       <div>
@@ -32,7 +31,7 @@ class GenInput extends React.Component {
           value={this.state.quote}
           onChange={this.handleChange}
         />
-      <GenText text={this.state.quote} />
+        <GenText text={this.state.quote} />
       </div>
     );
   }

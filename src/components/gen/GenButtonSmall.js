@@ -1,32 +1,36 @@
 import React from "react";
 
 class GenButtonSmall extends React.Component {
-
   constructor() {
-    super()
+    super();
     this.state = {
       index: 0
-    }
-    this.allImages = ["Spacegear_Template.jpg", "Valengear_Template.jpg", "Grassgear_Template.jpg",
-                "Raingear_Template.jpg", "Breadgear_Template.jpg", "Corgear_Template.jpg"]
+    };
+    this.allImages = [
+      "Spacegear_Template.jpg",
+      "Valengear_Template.jpg",
+      "Grassgear_Template.jpg",
+      "Raingear_Template.jpg",
+      "Breadgear_Template.jpg",
+      "Corgear_Template.jpg"
+    ];
 
-    this.handleClick = this.handleClick.bind(this)
-
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    let i = this.state.index + 1
-    if (i >= this.allImages.length)
-      i = 0
-    this.setState({ index: i })
+    let i = this.state.index + 1;
+    if (i >= this.allImages.length) i = 0;
+    this.setState({ index: i });
 
-    this.props.callbackImage(this.allImages[i])
+    this.props.callbackImage(this.allImages[i]);
   }
   render() {
     return (
-      <button 
+      <button
         className="h-12 w-1/5 px-8 text-lg font-bold text-white transition-colors duration-150 bg-red-300 rounded-lg focus:shadow-outline hover:bg-red-400"
-        onClick={this.handleClick}>
+        onClick={this.handleClick}
+      >
         {this.props.buttonText}
       </button>
     );
