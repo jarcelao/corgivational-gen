@@ -1,13 +1,13 @@
 import React from "react";
 
-import GenText from "./GenText"
+import GenTextAuthor from "./GenTextAuthor"
 
-class GenInput extends React.Component {
+class GenInputAuthor extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      quote: ""
+      author: ""
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -18,7 +18,7 @@ class GenInput extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ quote: nextProps.text})
+    this.setState({ author: nextProps.text})
   }
   
   render() {
@@ -27,15 +27,15 @@ class GenInput extends React.Component {
         <input
           className="w-full h-12 px-4 m-2 mx-0 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
           type="text"
-          name="quote"
+          name="author"
           placeholder={this.props.placeholderText}
-          value={this.state.quote}
+          value={this.state.author}
           onChange={this.handleChange}
         />
-      <GenText text={this.state.quote} />
+      <GenTextAuthor text={this.state.author} />
       </div>
     );
   }
 }
 
-export default GenInput;
+export default GenInputAuthor;

@@ -1,10 +1,14 @@
 import React from "react";
+import {Textfit} from "react-textfit"
 
 class GenText extends React.Component {
 
     render() {
         return (
-            <h2 className="absolute top-5 pt-4 w-1/4 text-sans text-3xl text-white stroke-black font-bold">{this.props.text}</h2> 
+            <Textfit mode="multi" 
+                    className="absolute top-5 pl-10 pt-4 w-1/4 h-1/3 text-white leading-none tracking-tighter font-arial text-outline">
+                        {this.props.text}
+                    </Textfit> 
         )
     }
 }
