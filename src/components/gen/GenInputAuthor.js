@@ -1,26 +1,25 @@
 import React from "react";
 
-import GenTextAuthor from "./GenTextAuthor"
+import GenTextAuthor from "./GenTextAuthor";
 
 class GenInputAuthor extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       author: ""
-    }
-    this.handleChange = this.handleChange.bind(this)
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    const {name, value} = event.target
-    this.setState({ [name]: value })
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ author: nextProps.text})
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    this.setState({ author: nextProps.text });
   }
-  
+
   render() {
     return (
       <div>
@@ -32,7 +31,7 @@ class GenInputAuthor extends React.Component {
           value={this.state.author}
           onChange={this.handleChange}
         />
-      <GenTextAuthor text={this.state.author} />
+        <GenTextAuthor text={this.state.author} />
       </div>
     );
   }
