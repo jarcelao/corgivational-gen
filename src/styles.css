@@ -3,3 +3,21 @@
 @tailwind components;
 
 @tailwind utilities;
+ 
+
+/*Custom colors*/
+.skyblue {
+    background-color: rgb(197, 227, 235);
+}
+
+.blue {
+    background-color: rgb(103, 155, 197);
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px rgb(82, 82, 82);
+}
+
+.font-arial {
+    font-family: 'Arial Black', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

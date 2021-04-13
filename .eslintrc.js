@@ -4,6 +4,7 @@ module.exports = {
     es6: true,
     node: true
   },
+  parser: "@babel/eslint-parser",
   extends: [
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
@@ -21,7 +22,11 @@ module.exports = {
   },
   rules: {
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": [
+      "warn", {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
     "react/prop-types": 0
   },
   settings: {
