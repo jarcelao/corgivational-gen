@@ -1,25 +1,8 @@
 import React from "react";
-
-import GenText from "./GenText";
+import { useRecoilState } from "recoil";
+import { quoteState } from "./GenState";
 
 class GenInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      quote: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.setState({ quote: nextProps.text });
-  }
-
   render() {
     return (
       <div>
@@ -28,13 +11,24 @@ class GenInput extends React.Component {
           type="text"
           name="quote"
           placeholder={this.props.placeholderText}
-          value={this.state.quote}
-          onChange={this.handleChange}
+          value={this.props.quote}
+          onChange={this.props.onChange}
         />
-        <GenText text={this.state.quote} />
       </div>
     );
   }
 }
 
-export default GenInput;
+const GenInputWrapper = () => {
+  const [quoteText, setQuoteText] = useRecoilState(quoteState);
+
+  const onChange = event => {
+    setQuoteText(event.target.value);
+  };
+
+  return (
+    <GenInput placeholderText="Quote" quote={quoteText} onChange={onChange} />
+  );
+};
+
+export default GenInputWrapper;

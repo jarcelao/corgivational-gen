@@ -1,25 +1,9 @@
 import React from "react";
+import { useRecoilState } from "recoil";
 
-import GenTextAuthor from "./GenTextAuthor";
+import { authorState } from "./GenState";
 
 class GenInputAuthor extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      author: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.setState({ author: nextProps.text });
-  }
-
   render() {
     return (
       <div>
@@ -28,13 +12,28 @@ class GenInputAuthor extends React.Component {
           type="text"
           name="author"
           placeholder={this.props.placeholderText}
-          value={this.state.author}
-          onChange={this.handleChange}
+          value={this.props.author}
+          onChange={this.props.onChange}
         />
-        <GenTextAuthor text={this.state.author} />
       </div>
     );
   }
 }
 
-export default GenInputAuthor;
+const GenInputAuthorWrapper = () => {
+  const [authorText, setAuthorText] = useRecoilState(authorState);
+
+  const onChange = event => {
+    setAuthorText(event.target.value);
+  };
+
+  return (
+    <GenInputAuthor
+      placeholderText="Author"
+      author={authorText}
+      onChange={onChange}
+    />
+  );
+};
+
+export default GenInputAuthorWrapper;
